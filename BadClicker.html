@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #microwave {
+                height:30%;
+                width:30%;
+            }
+            #SOUPPP {
+                height:90%;
+                width:90%;
+            }
+            #CRANKY {
+                height:33%;
+                width:33%;
+            }
+        </style>
+        <img id="SOUPPP" src = "https://thenovicechefblog.com/wp-content/uploads/2023/04/Copycat-Panera-Tomato-Soup-Image.jpg">
+       <p id="score">SOUP = 0</p>
+       <img id="microwave" src = "https://www.foodandwine.com/thmb/wtSAc8XIifwjyd8BMFZbErAOyQc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/faw-product-breville-smart-rkilgore-44-c5a16502b0084c71aca178479399f2b8.jpg">
+       <img id="CRANKY" src = "https://faithmag.com/sites/default/files/styles/tablet/public/2022-08/fm0119-work-life.jpg?itok=3kYHa-7y">
+    </head>
+<body>
+
+</body>
+</html>
+<script>
+var score = 0
+var ppc = 1
+var upgrdCost = 50
+var autoclickspd = 1
+document.getElementById("SOUPPP").addEventListener("click",increaseScore)
+document.getElementById("microwave").addEventListener("click",upgrade)
+document.getElementById("CRANKY").addEventListener("click",autoclicker)
+function increaseScore(){
+    score = score + ppc;
+    document.getElementById("score").innerText="SOUP = "+score
+    document.getElementById("microwave").innerText= 7
+    document.getElementById("CRANKY").innerText= 7
+    console.log(score)
+}
+function upgrade(){
+    if(score>=upgrdCost){
+        score=score-upgrdCost
+        upgrdCost=upgrdCost+50
+        ppc = ppc+1
+    }
+}
+function auto(){
+    score=score+autoclickspd
+    document.getElementById("score").innerText="SOUP = "+score
+}
+function autoclicker(){
+    setInterval(auto,1000)
+}
+
+</script>
