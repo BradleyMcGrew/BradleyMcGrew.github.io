@@ -1,16 +1,58 @@
 <!DOCTYPE html>
 <html>
-        <head>
-<style>
 
-</style>
-        </head>
-        <body>
-<div>
-    
-</div>
-        </body>
+<head>
+        <style>
+                body {
+                        background-color: black;
+                }
+
+                #Bouncer {
+                        background-color: black;
+                        width: 220px;
+                        height: 140px;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                }
+        </style>
+
+</head>
+
+<body>
+        <div>
+                <img id="Bouncer" src="https://www.freeiconspng.com/thumbs/dvd-logo-png/dvd-logo-png-33.png">
+        </div>
+</body>
+
 </html>
 <script>
-    var Bouncer = "sigma"
+        var topPos = 0
+        var leftPos = 0
+        var topDir = 2
+        var leftDir = 2
+        document.getElementById("Bouncer").addEventListener("click", startBox)
+        function startBox() {
+                setInterval(moveBox, 10)
+        }
+        function moveBox() {
+                if (leftPos <= 0) {
+                        leftDir = 2
+                }
+                if (leftPos >= 1700) {
+                        leftDir = -2
+                }
+                leftPos = leftPos + leftDir
+                document.getElementById("Bouncer").style.left = (leftPos + "px")
+
+                if (topPos <= 0) {
+                        topDir = 2
+                }
+                if (topPos >= 820) {
+                        topDir = -2
+                }
+                topPos = topPos + topDir
+                document.getElementById("Bouncer").style.top = (topPos + "px")
+        }
+
 </script>

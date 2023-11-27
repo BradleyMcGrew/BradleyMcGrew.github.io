@@ -28,6 +28,7 @@
 var score = 0
 var ppc = 1
 var upgrdCost = 50
+var autoCost = 100
 var autoclickspd = 1
 document.getElementById("SOUPPP").addEventListener("click",increaseScore)
 document.getElementById("microwave").addEventListener("click",upgrade)
@@ -51,7 +52,12 @@ function auto(){
     document.getElementById("score").innerText="SOUP = "+score
 }
 function autoclicker(){
-    setInterval(auto,1000)
+    if(score>=autoCost){
+        score=score-autoCost
+        autoCost=autoCost+100
+        setInterval(auto,1000)
+        autoclickspd=autoclickspd+1
+    }
 }
 
 </script>
