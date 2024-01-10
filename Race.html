@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+
+        #blueCar {
+            width: 500px;
+            height: 450px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        #wonkyCar {
+            width: 500px;
+            height: 450px;
+            position: absolute;
+            top: 450px;
+            left: 0px;
+        }
+    </style>
+    <h1>RACE</h1>
+</head>
+<body>
+    <img id="blueCar"
+        src="https://png.pngtree.com/png-clipart/20220502/original/pngtree-race-car-side-blue-png-image_7648502.png">
+    <p><img id="wonkyCar" src="wonky green car.png"></p>
+    <script>
+        var topB = 0
+        var leftB = 0
+        var topW = 500
+        var leftW = 0
+        document.addEventListener("keydown", moveBlue)
+        document.addEventListener("keydown", moveWonky)
+        function moveBlue(e) {
+            if(e.key==="q"){
+            leftB = leftB + 5
+            document.getElementById("blueCar").style.left = (leftB + "px")
+            }
+        }
+        function moveWonky(e) {
+            if(e.key==="p"){
+            leftW = leftW + 5
+            document.getElementById("wonkyCar").style.left = (leftW + "px")
+            }
+        }
+    </script>
+</body>
+</html>                                                                                                                                          
